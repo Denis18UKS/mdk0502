@@ -1,0 +1,64 @@
+body{
+    margin: 0% auto;
+}
+
+#Ege-bg{
+    background-color: rgb(199, 197, 197);
+}
+
+#EGE{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+#YourSignHow{
+    display: flex;
+    flex-direction: column;
+}
+
+#but-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+#but-content button{
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+main{
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(199, 197, 197);
+    height: 750px;
+}
+
+#VARS-BG{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: gainsboro;
+    width: 50%;
+    height: 90%;
+    font-size: larger;
+    text-align: center;
+}
+
+
+
+#Variants{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
