@@ -207,33 +207,38 @@
                             $letters = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
                             $randomIndex = rand(0, mb_strlen($letters, 'utf-8') - 1);
                             return mb_substr($letters, $randomIndex, 1, 'utf-8');
+                        }
+                        
+                        for ($i = 0; $i < 4; $i++) {
+                            switch ($_GET['task']) {
+                                case 2:
+                                    $var5 = randomRussianLetter();
+                                    $var6 = getRandomText();
+                                    $count = mb_substr_count(mb_strtoupper($var6, 'utf-8'), mb_strtoupper($var5, 'utf-8'), 'utf-8');
+                                    echo "<p>Напишите количество вхождений символа '$var5' в следующем тексте. В ответ записать число вхождений. <br> $var6</p>";
+                                    echo "<input type='hidden' value='" . $count . "' id='ans$i'>";
+                                    echo "<label>Ответ:</label><input type='number' id='ans_user$i'>";
+                                    echo "<p id='val$i'></p><hr>";
+                                    break;
                             }
-                            for($i=0;$i<4;$i++){
-                            switch($_GET['task']){
-                            case 2:
-                            $var5 = randomRussianLetter();
-                            $var6 = getRandomText();
-                            $count = mb_substr_count($var6, $var5, 'utf-8');
-                            echo "<p>Напишите количество вхождений символа '$var5' в следующем тексте. В ответ записать число вхождений. <br> $var6</p>";
-                            echo "<input type='hidden' value='" . mb_substr_count($var6, $var5, 'utf-8') . "' id='ans$i'>";
-                            echo "<label>Ответ:</label><input type='number' id='ans_user$i'>";
-                            echo "<p id='val$i'></p><hr>";
-                            break;
-                            }
-                            }
+                        }
+                        
                         ?>
                 </div>
             </section>
 
-        
-    </main>
-        
     <div class="submit">
         <label for="refreshButton">
         <input type="button" id="refreshButton" onclick="location.reload()" value="Пример решения"></label>
         <label onclick="click" for="redirectButton">
         <input type="button" id="btn" onclick="click" value="Отправить"></label>
     </div>
+
+    <button class="Main" onclick="window.location.href='/'">На главную</button>
+
+    </main>
+        
+    
 
 
     <script>
@@ -279,6 +284,13 @@ body{
     color: white;
 }
 
+.Main{
+    border-radius: 25px;
+    padding: 5px 15px;
+    background-color: black;;
+    color: white;
+}
+
 #timers{
     width: 20%;
     display: flex;
@@ -305,6 +317,7 @@ body{
 
 #VARS-BG{
     font-size: x-large;
+    height: auto;
 }
 
 #VARS-BG p{
